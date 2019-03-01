@@ -13,7 +13,7 @@ const docs = JSON.parse(fs.readFileSync(
     path.resolve(__dirname, "setup.json"),
     "utf8"
 ));
-// const cors          = require('cors');
+const cors          = require('cors');
 
 // Express server
 const port = process.env.DBWEBB_PORT || 1337;
@@ -25,7 +25,7 @@ app.use(bodyParser.urlencoded(
     { extended: true }
 )); // for parsing application/x-www-form-urlencoded
     
-// app.use(cors());
+app.use(cors());
     
     
 // Just for testing the sever
